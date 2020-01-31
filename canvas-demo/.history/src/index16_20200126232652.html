@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>头像切圆</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="600" width="600">
+
+        </canvas>
+
+        <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+
+            let img= new Image()
+            img.src = './img/touxiang.png'
+
+            img.onload = function(){
+                ctx.beginPath();
+                ctx.arc(400,200,150,0,Math.PI*2)
+                ctx.fill()
+                ctx.drawImage(this,70,100)
+            }
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

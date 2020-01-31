@@ -1,0 +1,19 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "1. webpack唯一的功能：打包 2. loader",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "_jquery@3.4.1@jquery": "^3.4.1",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

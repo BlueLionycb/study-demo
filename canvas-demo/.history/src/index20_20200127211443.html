@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>动画（直线运动）</title>
+        <style type="text/css">
+        canvas{
+            border:1px solid #000;
+        }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="800" width="800">
+
+        </canvas>
+
+        <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+            /*canvas的动画原理，
+            *1. 绘制图像
+            *2. 清除图像
+            *3. 更新位置
+            *4. 绘制图像
+            */
+
+            let x =0,y=0,width =100,height =100;
+            ctx.fillStyle='red'
+            ctx.fillRect(x,y,width,height)
+
+            let speedX=2,speedY=2;
+            setInterval(function(){
+                ctx.clearRect(0,0,canvas.width,canvas.height)
+                x+=speedX;
+                if(x>canvas.width-width){
+                    speedX *=-1
+                }else if(x<0){
+                    speedX *=-1
+                }
+            },30)
+            
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>涂鸦板</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="600" width="600">
+
+        </canvas>
+
+        <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+
+            canvas.onmousedown=function(e){
+                let ev= e|| window.event
+                let x=ev.clientX-canvas.offsetLeft
+                let y=ev.clientY-canvas.offsetTop
+                ctx.strokeStyle = 'green'
+                ctx.lineWidth =10
+                ctx.beginPath()
+                ctx.moveTo(x,y)
+                canvas.onmousemove =function(e){
+                    let ev= e|| window.event
+                    let x=ev.clientX-canvas.offsetLeft
+                    let y=ev.clientY-canvas.offsetTop
+                    ctx.lineTo(x,y)
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

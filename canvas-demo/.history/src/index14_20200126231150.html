@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>图片引入</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="600" width="600">
+
+        </canvas>
+
+        <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+
+            let img= new Image()
+            img.src = './img/image.png'
+
+            img.onload = function(){
+                //图片，x，y,宽高
+                // ctx.drawImage(this,0,0,300,200)
+                /*
+                *参数1：图像
+                *参数2：x轴
+                *参数3：y轴
+                *参数4：宽度
+                *参数5：高度
+                *参数6：绘制x轴
+                *参数7：绘制y轴
+                *参数8：绘制宽度
+                *参数9：绘制高度
+                */
+                ctx.drawImage(this,0,0,300,200,0,0,300,150)
+            }
+
+            
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

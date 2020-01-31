@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>刮刮卡</title>
+        <style type="text/css">
+            html,body{
+                margin: 0;
+            }
+            canvas{
+                position: absolute;
+                left: 0;
+            }
+      
+        
+        </style>
+    </head>
+    <body>
+
+        <img src="./img/touxiang.png" alt="">
+        <canvas id="myCanvas" height="200" width="200">
+
+        </canvas>
+
+        <script>
+        /** @type {HTMLCanvasElement} */ 
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+            //将图片用灰色盖住
+            ctx.beginPath()
+            ctx.fillStyle = 'gray'
+            ctx.fillRect(0,0,canvas.width,canvas.height)
+
+            ctx.g
+            
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

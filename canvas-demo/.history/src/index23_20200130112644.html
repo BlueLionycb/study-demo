@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>基础例子</title>
+        <style>
+            body {
+                background: #000;
+            }
+            #canvas{
+                background:white;
+            }
+            </style>
+            <script>
+            window.onload = function(){
+                var oCanvas = document.querySelector( "#canvas" ),
+                    oGc = oCanvas.getContext( '2d' );
+                oGc.strokeStyle = 'color:red'
+                oGc.moveTo( 50, 50 );
+                oGc.lineTo( 250, 50 );
+                oGc.lineTo( 250, 150 );
+                oGc.closePath();
+                oGc.stroke();
+            }
+            </script>
+            </head>
+            <body>
+            <canvas id="canvas" width="600" height="300"></canvas> 
+            </body>
+</html>

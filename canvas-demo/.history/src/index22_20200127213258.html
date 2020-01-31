@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>圆形碰撞反弹动画</title>
+        <style type="text/css">
+        canvas{
+            border:1px solid #000;
+        }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas" height="600" width="800">
+
+        </canvas>
+
+        <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+            /*canvas的动画原理，
+            *1. 绘制图像
+            *2. 清除图像
+            *3. 更新位置
+            *4. 绘制图像
+            */
+
+            function Ball(x,y,r,speedX,speedY,color){
+                //设置属性
+                this.x=x;
+                this.y=y
+                this.r=r
+                this.speedX=speedX
+                this.speedY=speedY
+                this.color=color
+
+                this.draw=function(){
+                    ctx.beginPath();
+                    ctx.fillStyle=this.color
+                    ctx.arc(this.x,this.y,this.r,0,Math.PI*2)
+                    ctx.fill()
+                }
+                this.move=function(){
+                    this.x+=this.speedX
+                    this.y+=this.speedY
+                    
+                }
+
+
+            }
+            
+            let ball=new Ball(100,100,50,2,2,'blue')
+            ball.draw();
+
+        }
+        
+        draw();
+    
+    </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" height="600" width="600">
+
+    </canvas>
+
+    <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+
+            ctx.fillStyle="rgb(0,200,0)"
+            ctx.fillRect(0,0,300,300)
+
+            ctx.fillStyle="rgb(200,0,0)"
+            ctx.fillRect(10,10,300,300)
+
+            ctx.fillStyle="rgba(0,0,200,.5)"
+            ctx.fillRect(20,20,300,300)
+
+            ctx.fillStyle="rgba(0,0,200,.5)"
+            ctx.fi(20,20,300,300)
+
+
+
+
+        }
+        
+        draw();
+    
+    </script>
+
+
+    
+</body>
+</html>

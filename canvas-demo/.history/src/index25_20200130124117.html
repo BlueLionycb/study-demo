@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>垂直全局移动（打飞机）</title>
+</head>
+<body>
+    <canvas id="myCanvas" height="600" width="600">
+
+    </canvas>
+
+    <script>
+        function draw(){
+            let canvas=document.getElementById("myCanvas") //画布
+            let ctx=canvas.getContext("2d"); //上下文，画笔
+            
+            let y=0 
+            function bgMove(){
+                ctx.save();
+                ctx.clearRect(0,0,canvas.width,canvas.height)
+                ctx.translate(0,y)
+                ctx.drawImage(bgImage,0,0)
+                ctx.drawImage(bgImage,0,canvas.height*-1)
+
+                y++
+                if(y>=canvas.height){
+                    y=0
+                }
+                ctx.restore();
+                window.requestAnimationFrame(bgmo)
+
+            }
+
+            let bgImage=new Image()
+            bgImage.src = './img/background.png'
+            bgImage.onload = function(){
+                bgMove();
+            }
+
+
+
+        }
+        
+        draw();
+    
+    </script>
+
+
+    
+</body>
+</html>

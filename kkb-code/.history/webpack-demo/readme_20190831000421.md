@@ -1,0 +1,25 @@
+## --------------------------------
+1. webpack唯一的功能：打包
+2. loader
+
+
+## --------------------------------
+```
+webpack.config.js
+
+module.exports={
+    mode:'none','production','development',
+    //development 保留必要信息
+    entry:'入口文件',{index:''}
+    output:{
+        path:XXX,
+        filename:XXX
+    }
+}
+```
+
+
+## --------------------------------
+loader--帮助webpack处理js以外的文件
+
+` npm i style-loader css-loader`
